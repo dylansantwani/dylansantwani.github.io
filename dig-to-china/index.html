@@ -5,10 +5,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dig to China</title>
-    <embed src="digtochina.swf" width="100vw" height="100vh" />
+    <embed id="game" src="digtochina.swf" height="500px" width="500px%" allowfullscreen="true" />
+    <button onclick="toggleFullscreen()">Fullscreen</button>
 
 </head>
 <body>
+    
+    <script>
+        function toggleFullscreen() {
+            const embed = document.getElementById("game");
+
+            if (embed.requestFullscreen) {
+                embed.requestFullscreen();
+            } else if (embed.webkitRequestFullscreen) { 
+                embed.webkitRequestFullscreen();
+            } else if (embed.msRequestFullscreen) { 
+                embed.msRequestFullscreen();
+            }
+        }
+    </script>
     
 </body>
 </html>
