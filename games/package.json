@@ -1,0 +1,24 @@
+{
+  "name": "nate-games",
+  "version": "v1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/nate-games/nate-games.github.io"
+  },
+  "keywords": [
+    "unblocked-games"
+  ],
+  "author": "nate-games",
+  "license": "GPL-3.0",
+  "devDependencies": {
+    "electron": "^25.2.0",
+    "electron-builder": "^24.4.0",
+    "electron-packager": "^17.1.1"
+  }
+}

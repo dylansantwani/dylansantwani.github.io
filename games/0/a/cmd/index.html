@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Waiting for input...</title>
+  <style>
+  @font-face {
+    font-family: Consolas;
+    src: url(/0/assets/fonts/Consolas-Font/CONSOLA.TTF);
+  }
+  body {
+    background-color: black;
+    color: #4bf542;
+    font-family:'Consolas';
+    font-size: 14px;
+    margin: 0%;
+  }
+  
+  textarea {
+    background-color: transparent;
+    resize: none;
+    caret-color: #4bf542;
+    color: #4bf542;
+    border: none;
+    outline: none;
+    height: 14px;
+  }
+
+  .inline-elements {
+    display: flex;
+    align-items: center;
+  }
+  </style>
+</head>
+<body>
+  <p>Type 'git -play' to continue</p>
+  <div class="inline-elements">
+    <p>&gt;</p>
+    <textarea name="" id="inputTextarea" cols="" rows="" spellcheck="false" onkeydown="handleKeyPress(event)"></textarea>
+  </div>
+  <script>
+    function handleKeyPress(event) {
+      if (event.key === "Enter") {
+        var input = event.target.value.trim();
+        if (input === "git -play") {
+          window.location.href = "/home";
+        }
+        document.getElementById("inputTextarea").value = "";
+      }
+    }
+  </script>
+</body>
+</html>

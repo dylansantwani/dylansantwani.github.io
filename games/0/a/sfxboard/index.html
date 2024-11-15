@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400&display=swap">
+  <script async defer src="/0/assets/js/buttons.js"></script>
+  <title>Dashboard</title>
+  <link rel="icon" type="image/png" href="https://du11hjcvx0uqb.cloudfront.net/dist/images/favicon-e10d657a73.ico">
+  <link rel="stylesheet" href="/0/assets/css/home.css">
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+    background-size: 9000% 400%;
+    animation: gradientAnimation 15s ease infinite;
+  }
+
+  @keyframes gradientAnimation {
+    0% {
+      background-position: 0% 50%;
+    }
+
+    50% {
+      background-position: 100% 50%;
+    }
+
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  .playButton {
+    font-size: 12px;
+    font-weight: bold;
+    height: 50px;
+    width: auto;
+    background-color: #ff0000;
+    border: none;
+    transition: transform 0.9s;
+    transition: background-color 0.1s;
+    color: white;
+  }
+
+  .playButton:hover {
+    transform: scale(0.9);
+    background-color: #a00101;
+  }
+
+  .playButton:active {
+    background-color: #fff;
+  }
+
+  .sound-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .volume-slider {
+    width: 250px;
+  }
+</style>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <button class="menu-item" onclick="window.location.href='/'">𝗡𝗮𝘁𝗲-𝗴𝗮𝗺𝗲𝘀</button>
+    </div>
+    <nav class="menu">
+      <button class="menu-item" onclick="window.location.href='/0/g/'">Games</button>
+      <button class="menu-item" onclick="window.location.href='/0/a/'">
+        Apps
+      </button>
+      <button class="menu-item" onclick="window.location.href='/0/ruffle/'">Flash Opener</button>
+    </nav>
+  </header>
+
+  <div class="sound-content">
+    <iframe id="soundIframe" src="" width="300" height="40" frameborder="0" allow="autoplay"></iframe>
+    <p></p>
+    <button id="button0" class="playButton" data-sound="">Stop Sound</button>
+    <h1>Sounds</h1>
+    <button id="button1" class="playButton" data-sound="./sounds/Athena_MusicPack_ClassicRemix.ogg">OG Fortnite
+      lobby</button>
+    <button id="button2" class="playButton" data-sound="./sounds/miguel-ohara-spiderverse.mp3">Miguel O'hara
+      theme (SHORT)</button>
+    <button id="button3" class="playButton"
+      data-sound="https://www.myinstants.com/media/sounds/miguel-oharris-spider-man-2099.mp3">Miguel O'hara
+      theme (FULL)</button>
+    <button id="button4" class="playButton"
+      data-sound="https://www.myinstants.com/media/sounds/prowler-audio.mp3">Prowler theme</button>
+    <button id="button5" class="playButton"
+      data-sound="https://www.myinstants.com/media/sounds/sin-city_WqiPelT.mp3">rizz (sin city)</button>
+    <audio id="audioPlayer"></audio>
+
+    <h1>Songs</h1>
+    <button id="button6" class="playButton" data-sound="./sounds/Boy's a Liar Pt. 2.mp3">Boy's a liar pt2</button>
+    <button id="button7" class="playButton" data-sound="./sounds/lucid dreams.mp3">Lucid Dreams</button>
+    <button id="button8" class="playButton" data-sound="./sounds/cupid (sped up).mp3">Cupid (sped up)</button>
+    <button id="button9" class="playButton" data-sound="./sounds/Industry Baby.mp3">Industry Baby</button>
+
+    <script>
+      function changeVolume(volume) {
+        const audioPlayer = document.getElementById('audioPlayer');
+        audioPlayer.volume = volume;
+      }
+
+      const soundButtons = document.getElementsByClassName('playButton');
+      const soundIframe = document.getElementById('soundIframe');
+
+      for (let i = 0; i < soundButtons.length; i++) {
+        soundButtons[i].addEventListener('click', function () {
+          const soundUrl = soundButtons[i].getAttribute('data-sound');
+          soundIframe.src = soundUrl;
+        });
+      }
+    </script>
+  </div>
+</body>
+
+</html>
